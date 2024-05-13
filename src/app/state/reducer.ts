@@ -1,9 +1,9 @@
-import { Action, createReducer, on } from "@ngrx/store";
+import { createReducer, on } from "@ngrx/store";
 
 import * as actions from "./actions";
-import { AppState, initialState } from "./state";
+import { initialState } from "./state";
 
-const _reducer = createReducer(
+export const categoriesReducer = createReducer(
   initialState,
   on(actions.addCategory, (state, {category}) => ({
     ...state,
@@ -17,7 +17,3 @@ const _reducer = createReducer(
   })),
   on(actions.deleteAllCategories, (state) => ({ ...state, categories: [] })),
 );
-
-export function reducer(state: AppState, action: Action) {
-  return _reducer(state, action);
-}
