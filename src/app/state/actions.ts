@@ -15,3 +15,7 @@ export const updateCategory =  createAction(
   "[Category List] Update Category",
   props<{name: string}>()
 );
+
+export const deleteAllCategories =  createAction(
+  "[Category List] Delete All Categories"
+);
